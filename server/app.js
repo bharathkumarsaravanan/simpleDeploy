@@ -9,7 +9,7 @@ mongoose.connect("mongodb+srv://Bharath:Test-123@testing.frw4bzn.mongodb.net/use
 const _dirname = path.dirname("");
 const buildPath = path.join(_dirname , "../client/build");
 
-app.use(express.static(buildPath));
+app.use(express.static(buildPath));;
 
 app.get("/", function(req,res){
     res.sendFile(
@@ -29,7 +29,13 @@ const userSchema = mongoose.Schema({
 
 const User = new mongoose.model("user", userSchema);
 
-app.use(cors());
+const corsOptions = {
+    origin : "*",
+    credentials: true,
+    optionSuccessStatus: 200
+}
+
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
