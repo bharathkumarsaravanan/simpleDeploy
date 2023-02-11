@@ -12,7 +12,6 @@ const buildPath = path.join(_dirname , "../client/build");
 app.use(express.static(buildPath));
 
 app.get("/", function(req,res){
-
     res.sendFile(
         path.join(__dirname, "../client/build/index.html"),
         function (err){
@@ -66,5 +65,7 @@ app.post("/users", function(req,res){
 
 
 app.listen(port, function(){
+console.log(path.join(__dirname, "../client/build/index.html"));
+
     console.log(`PORT : ${port}`)
 })
