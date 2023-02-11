@@ -30,7 +30,7 @@ const userSchema = mongoose.Schema({
 const User = new mongoose.model("user", userSchema);
 
 const corsOptions = {
-    origin : "*",
+    origin : "http://43.205.114.56",
     credentials: true,
     optionSuccessStatus: 200
 }
